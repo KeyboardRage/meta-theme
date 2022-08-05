@@ -5,7 +5,7 @@ A CSS/JavaScript (Stylish/Tampermonkey) theme for V3rmillion.net
 * 🎨 Not just re-coloured, but also stylized (*you can re-colour it to your linking too*)
 * ❤ Automatically initialized first-time setup guide
 * ✨ Design following the meta trend of everything glass and rounded style :^)
-* ⚜ Custom logo that changes colour along with your theme
+* ⚜ Custom logo that changes colour along with your theme, or one of your choosing
 * 🆎 Automatically picks text colour (*black or white*) for best contrast based on your theme color
 * 🔅 Automatically creates lighter tint and darker shade of theme colour
 * 🗂 Thread prefixes are colour coded and tagged with classes (*if you want to customize them more*)
