@@ -561,8 +561,8 @@ class MetaTheme {
 					<ol>
 						<li>Go to the extension website: <a href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne" taget="_blank">Chrome/Chromium/Opera/Vivaldi</a> | <a href="https://addons.mozilla.org/firefox/addon/styl-us/" taget="_blank">Firefox</a></li>
 						<li>Install the extension.</li>
-						<li><a href="https://userstyles.world/" target="_blank">Click here</a> to go to the website for the theme.</li>
-						<li>Click the blue 'Install' button there.</li>
+						<li><a href="https://userstyles.world/style/5986/meta" target="_blank">Click here</a> to go to the website for the theme.</li>
+						<li>Click the 'Install' button there.</li>
 						<li>Copy all the code there.</li>
 						<li>While having v3rmillion website open, click the extension icon (looks like '{S}').</li>
 						<li>Click the text "Write style for: v3rmillion.net" (⚠ NOT the '/this URL' part of it).</li>
