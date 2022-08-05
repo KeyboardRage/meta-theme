@@ -96,3 +96,12 @@ shadow: "0 2px 4px rgba(0,0,0,.1),0 4px 8px rgba(0,0,0,.1),0 8px 16px rgba(0,0,0
 
 theme.effects.blur = "blur(8px)" // Halves the blur amount
 ```
+
+### Custom logo
+By default, the theme will switch to a slightly altered logo that will always have the theme color.  
+You can also use a custom logo of your own easily too, and revert back to the original one.
+```js
+theme.setLogoSVG() // Changes to the Meta logo that changes colour
+theme.setLogoImage() // Changes to the default logo
+theme.setLogoImage("https://full.image/link.png") // Change to a custom logo
+```
