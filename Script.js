@@ -576,7 +576,7 @@ class MetaTheme {
 			case 0: {
 				container.appendChild(this.htmlParse(`<div>
 					<ol>
-						<li>Please go to this link to get the CSS: <a href="https://thevirt.us/sht/meta_theme.css" target="_blank">https://thevirt.us/sht/meta_theme.css</a></li>
+						<li>Please go to this link to get the CSS: <a href="https://github.com/KeyboardRage/meta-theme/raw/main/Script.js" target="_blank">https://github.com/KeyboardRage/meta-theme/raw/main/Script.js</a></li>
 						<li>Copy and paste it into whatever CSS modifying extension you're using.</li>
 						<li>Click the "I have installed it" button bellow to complete setup.</li>
 					</ol>
