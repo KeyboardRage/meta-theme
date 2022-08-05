@@ -1,0 +1,1053 @@
+/*
+==============================
+Table of Content
+
+1. Variables
+2. Overrides
+	- 2.1 Backgrounds
+	- 2.2 Borders
+	- 2.3 Accent: background;
+3. Places of navigation
+	- 3.1 Top navbar
+4. Constant site content
+	- 4.1 Body
+	- 4.2 Header
+5. Various labels
+	- 5.1 Sub-forum label
+    - 5.2 Collapse / expand
+    - 5.3 Warnings
+6. Postbit
+	- 6.1 Image area
+	- 6.2 Status container
+	- 6.3 Reputation
+7. Meta theme stuff
+	- 7.1 Installation window
+==============================
+*/
+
+/*
+==============================
+1. # Variables
+==============================
+/* Variables are loaded by the JavaScript in order to enable live-editing from console or using API */
+
+/*
+==============================
+2. # Overrides
+==============================
+*/
+
+body {
+    background: var(--bg);
+}
+
+/*
+2.1 ## Backgrounds
+*/
+#header,	 	/* Logo background */
+#wrapper, 		/* Main outer BG */
+.navigation, 	/* Breadcrumb */
+#content, 		/* Content container */
+ul.bottommenu,	/* Footer container */
+#footer			/* Footer */
+{
+    background: none;
+}
+
+#bridge, 	/* Navbar */
+.tfoot			/* Footer of table */
+{
+	background: none;
+}
+
+/*
+2.2 ## Borders
+*/
+.navigation,	/* Breadcrumb */
+#content,		/* Content container */
+#bridge,		/* Navbar */
+#footer 		/* Footer */
+{
+	border: none;
+}
+
+/*
+2.3 ## Accent
+*/
+
+/* BACKGROUND */
+/* In-line styles */
+[style*="background: #CD1818"]{background: var(--accent)}
+
+/*
+{
+	background: var(--accent);
+}
+*/
+
+/* COLOR */
+/* In-line styles */
+[style*="color: #CD1818"]{color: var(--accent) !important}
+
+.forum_on,		/* Online list */
+.cRem a:visited,/* Visited links */
+.cRem a:link 	/* Links */
+{
+	color: var(--accent) !important;
+}
+
+/*
+2.4 ## Random overrides
+*/
+/* Online members statistics */
+#boardstats_e * {
+	border: none;
+}
+/* Error box contianer */
+div.error ul {
+    color: inherit;
+}
+
+/*
+==============================
+3. # Places of navigation
+==============================
+*/
+/*
+3.1 ## Top navbar
+*/
+#bridge {
+    position: fixed;
+    top: 0;
+    padding: 1em;
+    z-index: 99;
+    border-bottom: solid thin var(--accent);
+    width: 100%;
+}
+
+/* To allow blurred bridge, but also blurred dropdown menus */
+#bridge:after {
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    -webkit-backdrop-filter: var(--blur);
+    backdrop-filter: var(--blur);
+}
+.wrap {
+    position: relative;
+    z-index: 99;
+}
+
+/* Home, Rules, Member List, ... */
+ul.menu li:hover a, ul.menu li a:hover {
+    background: var(--card);
+    border-radius: 6px;
+}
+ul.menu li:hover a:hover {
+    color: var(--accent);
+}
+
+
+#content {
+    overflow: visible;
+}
+
+/*
+3.2 ## Pages
+*/
+.pagination a,
+.pagination_current {
+    background: var(--accent) !important;
+    border: none;
+    border-radius: 6px;
+    width: 2em;
+    height: 1.7em;
+    padding: 0 !important;
+    display: inline-block;
+    padding-top: .3em !important;
+    text-align: center;
+    font-size: 1.4em;
+    color: var(--over_accent) !important;
+    box-shadow: 0 2px 4px #000;
+    transition: background .2s;
+}
+a.pagination_next,
+a.pagination_page,
+a.pagination_previous {
+    background: var(--accent_slight) !important;
+	color: var(--accent) !important;
+    box-shadow: none;
+}
+
+a.pagination_next,
+a.pagination_previous {
+    width: auto;
+    padding: .3em .8em !important;
+    background: transparent !important;
+    height: 1.4em;
+}
+a.pagination_next:hover,
+a.pagination_page:hover,
+a.pagination_previous:hover {
+	transition: background .2s;
+    color: var(--over_accent) !important;
+    background: var(--accent) !important;
+}
+a.pagination_last {
+    width: fit-content;
+    padding-left: .4em !important;
+    padding-right: .4em !important;
+}
+
+/*
+==============================
+4. # Constant site content
+==============================
+*/
+
+/*
+4.1 ## Body
+*/
+body {
+	background: var(--bg);
+    color: var(--text);
+}
+
+/*
+4.2 ## Header
+*/
+[onclick*="Advertisement"] {
+    display: none;
+}
+div#header {
+    margin-top: 5em;
+}
+
+/*
+4.3 ## Table container
+*/
+/* table:not(#clickable_smilies):not(.tfixed):not([style]) { */
+#content > table:not(.tfixed):not([align="center"]) {
+	box-shadow: var(--shadow);
+	color: var(--slight);
+}
+
+.inline_row a:visited,
+.inline_row a {
+	color: var(--accent);
+}
+
+#container {
+    position: relative;
+}
+/*
+==============================
+5. # Various labels
+==============================
+*/
+/*
+5.1 ## Sub-forums
+*/
+/* Forum group table main header */
+.tborder {
+	/*padding: 1em;*/
+    background: var(--card);
+}
+.thead,
+.tcat {
+	padding: 2rem 2rem .2rem 2rem;
+}
+.trow2[align="center"]:first-child,
+.trow1[align="center"]:first-child,
+table tr td.scaleimages .smalltext {
+	padding-left: 2rem;
+}
+
+.thead {
+	border-radius: 2em;
+	background: transparent;
+}
+.thead a,
+.thead div > strong {
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--accent) !important;
+}
+
+.tcat,			/* 'Forum | Threads | Posts | Last post' bar */
+.trow1,			/* Forum thread/cat rows */
+.trow2			/* Forum thread/cat rows */ {
+	background: transparent;
+	border: none;
+}
+.trow1 strong,			/* Forum thread/cat rows */
+.trow2 strong			/* Forum thread/cat rows */
+{
+	font-weight: 400;
+}
+.tcat {
+	color: #ffffff47;
+	padding-top: 0;
+}
+table tr:last-child td {
+    padding-bottom: 1.8em;
+}
+
+/* Sub-forums in rows */
+.sub_control {
+	background-color: var(--over_lighter);
+	position: relative;
+    transition: all .2s;
+    top: 0;
+    border-radius: 6px;
+    padding: .7em 1.5em;
+    border: none;
+}
+.sub_control:hover {
+    top: -2px;
+    background: var(--accent);
+    transition: all .2s;
+}
+.sub_control:hover a {
+    color: var(--over_accent) !important;
+}
+/*
+5.2 ## Collapse / expand
+*/
+.expcolimage > img {
+    opacity: .2;
+    border-radius: 2em;
+    transition: opacity .2s ease-out;
+}
+.expcolimage > img:hover {
+    opacity: 1;
+    transition: opacity .2s ease-out;
+}
+
+.smalltext,
+table .smalltext strong a,
+table .smalltext strong a:visited {
+	color: var(--slight);
+}
+table .smalltext strong a,
+table .smalltext strong a:visited {
+	color: var(--slight) !important;
+}
+.lastpost a {
+	color: var(--accent) !important;
+	border-bottom: dotted thin var(--accent);
+}
+.lastpost a:hover {
+	border-bottom: solid thin var(--accent);
+}
+
+.pagination .pages {
+	display: none;
+}
+
+/*
+5.3 ## Warnings
+*/
+div.error {
+    border-radius: 6px;
+    background: var(--accent);
+    color: var(--over_accent);
+}
+div.error p em {
+    color: var(--over_accent);
+}
+
+/*
+7. Buttons
+*/
+button,
+input.button,
+.like_post,
+.dislike_post,
+.post_ratings,
+.post_controls a,
+input[type="submit"],
+.navigation a
+{
+    background: var(--accent_slight) !important;
+    border: none !important;
+    border-radius: 6px;
+    text-align: center;
+    color: var(--accent) !important;
+    transition: background .2s;
+    padding: .4rem 1.2rem !important;
+}
+
+.like_post,
+.dislike_post,
+.post_ratings,
+.post_controls a,
+input[type="submit"],
+.navigation a
+{
+    background: var(--card) !important;
+}
+
+button:hover,
+input.button:hover,
+.like_post:hover,
+.dislike_post:hover,
+.post_ratings:hover,
+.post_controls a:hover,
+input[type="submit"]:hover,
+.navigation a:hover
+{
+    background: var(--accent) !important;
+    color: var(--over_accent) !important;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.thead input.textbox, .thead select {
+    border-color: var(--bg);
+}
+.thead input.textbox:focus, .thead select:focus {
+    border:solid thin var(--accent);
+}
+
+.navigation a {
+    margin-right: .4rem;   
+}
+
+tr.inline_row {
+	position:relative;
+	top: 0;
+	transition: all .2s;
+}
+/*
+tr.inline_row:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,.8), -6px 0 0 var(--accent);
+    transition: all .2s;
+    background: var(--accent_slight);
+}*/
+
+#boardstats_e .tfoot {
+    text-align: center !important;
+}
+#boardstats_e .tfoot a {
+    padding: .8em 1.2em;
+    background: var(--accent_slight);
+    border-radius: 6px;
+    color: var(--accent);
+    transition: all .2s ease;
+}
+#boardstats_e .tfoot a:hover {
+    text-decoration: none;
+    background: var(--accent);
+    color: var(--bg);
+    transition: all .2s ease;
+}
+#boardstats_e .tfoot a[href*="=logout"],
+.dislike_post,
+#elite_close {
+    background: var(--red_slight) !important;
+    color: var(--red) !important;
+}
+#boardstats_e .tfoot a[href*="=logout"]:hover,
+.dislike_post:hover,
+#elite_close:hover {
+    background: var(--red) !important;
+    color: var(--bg) !important;
+}
+h2 {
+    color: var(--accent);
+}
+#copyright {
+    color: var(--slight);
+}
+.closed_table {
+    background: transparent;
+    border: solid thin var(--accent);
+    box-shadow: none;
+}
+#boardstats_e [style="text-align:center;border-top:1px solid #101010"] {
+    display: flex;
+    justify-content: center;
+    border-top:none !important;
+}
+
+#boardstats_e [style="display:inline-block;width:40%;"] {
+    width: auto;
+    background: rgba(255,255,255,.03);
+    padding: .8em 1.2em;
+    margin: .4em .3em;
+    border-radius: 6px;
+}
+.pagination {
+    color: var(--slight);
+    margin: 1em 0;
+    position: relative;
+    z-index: 2;
+}
+.go_page {
+    display: none !important;
+}
+.drop_go_page {
+    display: inline-block !important;
+    position: initial !important;
+    background: transparent;
+    border: none;
+}
+input.textbox:focus, textarea:focus {
+    border-color: var(--accent);
+    box-shadow: none;
+}
+
+a.button:not(.pagination_page):link,
+a.button:not(.pagination_page):visited,
+a.button:not(.pagination_page):active
+{
+    background: var(--accent);
+    padding: .8em 1.5em;
+    border-radius: 6px;
+    border: none;
+    transition: all .2s ease-out;
+    color: var(--over_accent);
+}
+a.button:not(.pagination_page):link:hover,
+a.button:not(.pagination_page):visited:hover,
+a.button:not(.pagination_page):active:hover
+{
+    transition: all .2s ease-out;
+    background: var(--accent_light) !important;
+}
+
+#wrapper a.new_thread_button span {
+    color: var(--over_accent);
+}
+.new_thread_button span:before {content: none !important}
+.new_thread_button:before {
+    content: "+";
+    width: 1em;
+    height: 1em;
+    background: var(--over_accent);
+    color: var(--accent);
+    border-radius: 2em;
+    box-shadow: 0 2px 1px rgba(0,0,0,0.3);
+    display: inline-block;
+    text-align: center;
+    font-size: 1.6em;
+    vertical-align: middle;
+    line-height: 95%;
+    margin-right: .6em;
+}
+
+.users_browsing {
+    position: absolute;
+    max-height: fit-content !important;
+    border-radius: 6px;
+    z-index: 1;
+}
+.users_browsing .smalltext {
+    font-size: 0;
+}
+.users_browsing:before {
+    content: "Users browsing";
+    top: -2.5em;
+    position: relative;
+    padding: 1em;
+    overflow: visible;
+    display: inline-block;
+    background: var(--accent_slight);
+    border-radius: 6px;
+}
+.users_browsing a {
+    display: none;
+}
+
+.users_browsing:hover:before {
+    display:none;
+}
+.users_browsing:hover {
+    top: 2.5em;
+    background: var(--card);
+    box-shadow: 0 10px 16px rgba(0,0,0,.3);
+    padding: 2rem;
+    max-width: 36rem;
+    backdrop-filter: var(--blur);
+    overflow:visible !important;
+    z-index: 3;
+}
+
+.users_browsing:hover > .smalltext {
+    color: rgba(0,0,0,0);
+    font-size: 0;
+}
+
+.users_browsing:hover > .smalltext > a {
+    display: initial;
+    color: initial;
+    font-size: .8rem !important;
+    margin: 0 .4em;
+}
+td.trow_sep {
+    color: var(--accent_light);
+    background: transparent;
+    padding-left: 2rem;
+}
+.panel_buttons {
+    top: 4.9em;
+    border: none;
+    backdrop-filter: var(--blur);
+    background: var(--card);
+    width: 14em;
+    padding: 1rem;
+    border-radius: 16px;
+    left: calc(90% - 12em);
+    position: fixed;
+}
+.panel_buttons a {
+    display:block;
+    padding: 1.2em 2.4em;
+}
+.panel_buttons a:hover {
+    background:transparent;
+    color: var(--accent_light);
+    border-radius: 6px;
+    background: #ffffff0f;
+}
+
+[style*="text-shadow"] {
+    text-shadow: none !important;
+}
+
+[class="tborder tfixed clear"] {
+    background: transparent;
+    box-shadow: none;
+}
+.post {
+    background: var(--bg);
+    border: solid thin var(--accent);
+    border-radius: 16px;
+    display: grid;
+    width: auto;
+    grid-template-areas:
+        "postbit post-content"
+        "postbit post-actions";
+    grid-template-columns: max-content auto;
+    grid-template-rows: auto auto;
+    margin: 1em 0;
+    position: relative;
+    overflow: visible;
+}
+.post_author {
+    background: transparent !important;
+    border-radius: 6px 0 0 0 !important;
+    border: 0 !important;
+    grid-area: postbit;
+    width: 100% !important;
+    margin: 1em 0 1em  1em !important;
+    width: unset !important;
+    position: relative;
+    max-width: 193px;
+}
+.post.classic {
+    padding: 0
+}
+.post_head .postlink {
+    border: none;
+    background: none;
+}
+.post .post_head {
+    border: none;
+}
+.post_content {
+    margin: 1em;
+    background: var(--bg_light);
+    border-radius: 11px;
+    grid-area: post-content;
+    box-shadow: var(--shadow);
+    padding: 0 !important;
+    position: relative;
+    width: unset !important;
+    color: var(--text);
+}
+.post_content .post_head,
+.post_content .post_body,
+.post_content .signature {
+    padding: 1rem;
+}
+.post_content .post_head,
+.post_content .post_body,
+.post_content .signature,
+#boardstats_e tr:nth-child(1) td,
+#boardstats_e tr:nth-child(2) td{
+    border-bottom: solid thin var(--bg);
+}
+.post_content .post_body,
+.post_content .signature,
+.post_content div[id^=like_buttons],
+.modal tbody tr:first-child td,
+#boardstats_e tr:nth-child(2) td,
+#boardstats_e tr:nth-child(3) td{
+    border-top: solid thin rgba(255,255,255,.02) !important;
+}
+.post_controls {
+    grid-area: post-actions;
+    background: none;
+    border: none;
+    margin: 1em;
+    overflow: visible;
+    box-shadow: none;
+}
+.post_content .signature {
+    border-top: none;
+    margin: 0;
+}
+.author_statistics {
+    border: none !important;
+    text-align: center;
+}
+.author_statistics > [title] {
+    margin-top: 1em;
+}
+
+div[id^=like_buttons] {
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+}
+div[id^=like_buttons] > div {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+.thread_head {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.thread_head tr td {
+    padding:0 !important;
+}
+
+.hiddenQuote {
+    background: linear-gradient(to bottom,rgba(16,16,16,1) 0%,rgba(16,16,16,1) 87%,rgb(6, 6, 6) 100%);
+}
+
+.post_meta {
+    margin:0 !important;
+}
+
+#wrapper a:link:not(#bridge a, .button),
+#wrapper a:visited:not(#bridge a) {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+::-webkit-scrollbar-track
+{
+    background-color: var(--bg);
+    overflow: hidden;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: var(--accent);
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: var(--accent);
+    overflow: hidden;
+}
+
+.modal {
+    background: transparent;
+    backdrop-filter: var(--blur);
+    border: solid thin var(--accent);
+}
+
+#boardstats_e td.trow1 {
+    padding: 0;
+}
+#boardstats_e td > div {
+    padding: 1rem 1rem 1rem 2rem;
+}
+a.logout {
+    color: var(--red);
+    background-color: var(--red_slight);
+    border-radius: 6px;
+}
+a.logout:hover {
+    color: var(--bg);
+    background-color: var(--red);
+}
+.ddm_anchor {
+    padding: 0.2em 1.2em;
+}
+.ddm_anchor:hover {
+    background: var(--card);
+    border-radius: 6px;
+    padding: 0.2em 1.2em;
+}
+.ddm_anchor:hover a:hover {
+    color: var(--accent);
+}
+.ddm_anchor a:hover {
+    background: none;
+}
+.author_avatar img,
+.usercp_container {
+    border:none !important;
+    background: none !important;
+}
+.usercp_container img {
+    width: unset !important;
+    height: unset !important;
+}
+.post_head .float_right > strong > a {
+    position: relative;
+    top: -1px;
+    color: var(--slight)
+}
+.post_head .float_right > strong {
+    align-self: center;
+    font-weight: 100;
+}
+.post_head .float_right {
+    background: var(--bg);
+    width: 2rem;
+    border-radius: 10em;
+    height: 2rem;
+    text-align: center;
+    position: relative;
+    display: grid;
+    top: -8px;
+}
+
+.pre_tag, .thread_tag {
+    display: inline-block;
+    background: var(--accent);
+    border-radius: 6px;
+    color: var(--bg);
+    padding: .2rem .4rem .2rem;
+    margin-right: 0.3em;
+    font-weight: 600;
+    font-size: .7rem;
+}
+
+.pre-tag_poll {
+    background: var(--card);
+    color: var(--slight);
+    padding: .2em .8em;
+    font-weight: 300;
+}
+
+.reputation_positive {
+    color: var(--green);
+}
+
+.awards {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    max-width: fit-content;
+    margin: 1em auto;
+    grid-gap: .1em;
+}
+
+.online_status.user_online {
+    position: absolute;
+    width: 8px;
+    height: 18px;
+    background: #31cc52;
+    border-radius: 9px 0 0 9px;
+    top: 6rem;
+    z-index: 50;
+    overflow: visible;
+    left: calc(-.5rem - 1px);
+    box-shadow: -2px 0 8px var(--green), -6px 0 16px var(--green);
+    font-size:0;
+}
+
+.navigation .active {
+    display: inline-block;
+    background: var(--card);
+    padding: .4rem 1.2rem;
+    border-radius: 6px;
+    margin: 0;
+    font-weight: 300;
+}
+.popup_menu {
+    z-index: 10;
+    top: 2.6em !important;
+    left: 0 !important;
+}
+.post_management_buttons {
+    position: relative;
+}
+
+.pre-tag_service,
+.tag_service{
+    background: #6a84d0;
+}
+.pre-tag_s,
+.tag_s {
+    background: #ad1949;
+    color: white;
+}
+.pre-tag_b,
+.tag_b {
+    color: white;
+    background: forestgreen;
+}
+.pre-tag_discuss
+.tag_discuss {
+    background: cadetblue;
+}
+.pre-tag_miniannounce,
+.tag_miniannounce {
+    background: deepskyblue;
+}
+.pre-tag_request,
+.tag_request {
+    background: tomato;
+}
+.pre-tag_release,
+.tag_release {
+    background: seagreen;
+}
+.tag_report,
+.pre-tag_report {
+    background: red;
+    color: white;
+}
+.tag_warning,
+.pre-tag_warning {
+    background: gold;
+}
+hr {
+    border: none;
+    width: 100%;
+    height: 3px;
+    border-bottom: solid thin var(--bg_light);
+    box-shadow: 0 -1px var(--accent);
+    background-color: var(--bg);
+    border-radius: 6px;
+}
+
+.sceditor-container,
+.sceditor-toolbar {
+    background: var(--bg) !important;
+    border: none !important;
+    border-radius: 6px;
+}
+.sceditor-toolbar {
+	border-radius: 6px 6px 0 0 !important;  
+    border-bottom: solid thin var(--accent) !important;
+}
+.sceditor-container iframe,
+.sceditor-container textarea {
+    background: var(--bg) !important;
+}
+body[contenteditable="true"] > p {
+    color: var(--text);
+}
+form .trow2 {
+    vertical-align: top;
+}
+.profile_header {
+    background: var(--card);
+    border: none;
+}
+.top_links .ddm {
+ 	border:none;
+    backdrop-filter: var(--blur);
+    background: var(--card);
+    border-radius: 16px;
+}
+ul.menu li ul li a:link,
+ul.menu li ul li a:visited {
+    background: none;
+}
+/*
+==============================
+6. # Postbit
+==============================
+*/
+/*
+6.1 ## Image area
+*/
+/* Profile pictures */
+.author_avatar img {
+    border-radius: 10px;
+}
+
+/*
+6.2 ## Status container
+*/
+/* The container for all stats */
+.author_statistics dl {
+    display: flex;
+    flex-grow: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* The titles of statistics */
+.author_statistics .title {
+    text-align: right;
+    padding-right: 4px;
+    box-sizing: border-box;
+    opacity: .4;
+}
+/* The value of the title */
+.author_statistics .value {
+    margin-inline-start: unset;
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 4px;
+}
+/* Applies to both to make them stay next to each other */
+.author_statistics .value,
+.author_statistics .title {
+    flex-basis: 50%;
+    flex-basis: 50%;
+}
+
+/*
+6.3 ## Reputation
+*/
+/* Positive rep */
+.stat_rep.positive a {
+    color: var(--rep_positive);
+}
+/* Negative rep */
+.stat_rep.negative a {
+    color: var(--rep_negative);
+}
+/* Neutral rep */
+.stat_rep.neutral a {
+    color: var(--rep_neutral);
+}
+
+/*
+==============================
+7. # Meta theme stuff
+==============================
+*/
+/*
+7.1 ## Installation window
+*/
+.meta_install {
+    text-align: center;
+    padding: 1em;
+    border: solid thin yellow;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 4px;
+    background-color: #ffff000a;
+}
+.meta_install li {
+    text-align: left;
+}
