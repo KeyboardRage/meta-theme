@@ -25,7 +25,7 @@ You need two browser extensions for this theme to work:
 1. Go to V3rmillion.net
 1. While on the website; click the Tampermonkey extension and make sure Tampermonkey is enabled, then select "Create a new script..."  
 ![image](https://user-images.githubusercontent.com/40437596/183116232-7f70741f-fd53-40fd-a417-0f1d7e3c2a6d.png)
-1. Replace the existing content with that of the Script.js
+1. Replace the existing content with that of the [Script.js](./Script.js)
 1. Save the Tampermonkey document (*CTRL+S*)
 1. Navigate back to V3rmillion.net and reload the page
 1. Follow instructions presented below the logo
