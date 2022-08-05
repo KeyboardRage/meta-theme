@@ -586,11 +586,9 @@ class MetaTheme {
 			// User have Stylish
 			case 1: {
 				container.appendChild(this.htmlParse(`<div>
-					<ol>
-						<li><a href="https://userstyles.org/" target="_blank">Click here</a> to go to the website for the theme.</li>
-						<li>Click the blue 'Install style' button there.</li>
-						<li>Click the "I have installed it" button bellow to complete setup.</li>
-					</ol>
+					<p>Unfortunately Userstyles.org does not want to validate the CSS, and the theme can therefore not be published on this platform.</p>
+					<p>I would recommend switching to Stylus instead:  <a href="https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne" taget="_blank">Chrome/Chromium/Opera/Vivaldi</a> | <a href="https://addons.mozilla.org/firefox/addon/styl-us/" taget="_blank">Firefox</a>.</p><ol>
+					<p>Once you have installed that plugin, reload this page and follow the setup guide again, but selecting the "Stylus" option instead.</p>
 				</div>`));
 				break;
 			}
